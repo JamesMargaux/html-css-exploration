@@ -1,0 +1,447 @@
+@font-face {
+    font-family: 'sf_collegiateregular';
+    src: url('fonts/sf_collegiate-webfont.woff2') format('woff2'),
+         url('fonts/sf_collegiate-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sf_collegiate_solidregular';
+    src: url('fonts/sf_collegiate_solid-webfont.woff2') format('woff2'),
+         url('fonts/sf_collegiate_solid-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*{
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    --bg: #121212;
+    --sf1:  rgb(31,31,31);
+    --sf2:  rgb(36,36,36);
+    --sf3:  rgb(38,38,38);
+    --sf4:  rgb(41,41,41);
+    --sf5:  rgb(46,46,46);
+    --sf6:  rgb(49,49,49);
+    --sf7:  rgb(54,54,54);
+    --sf8:  rgb(56,56,56);
+    --sf9:  rgb(59,59,59);
+    --primary-color: #FFAB91;
+    --primary-focus:#FF8A65;
+    --primary-color-active: #FF7043;
+    --seondary-color: #B0BEC5;
+    --error: #cf6679;
+    --on-bg: #ffffff;
+    --on-surface: #ffffff;
+    --on-primary: #000000;
+    --on-secondary: #000000;
+    --on-error: #000000;
+    --brand-color:#FF5722;
+}
+/*General Styles*/
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--on-bg);
+}
+body::-webkit-scrollbar{
+    width: .5rem;
+}
+body::-webkit-scrollbar-track{
+    background: var(--bg);
+}
+body::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+p{
+    font-size: 1.6rem;
+}
+h1{
+    font-size: 3.2rem;
+}
+h2{
+    font-size: 2.4rem;
+    text-align: center;
+}
+h3{
+    font-size: 1.8rem;
+}
+h4{
+    font-size: 1.3rem;
+}
+h5{
+    font-size: .7;
+}
+ul{
+    font-size: 1.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ol{
+    font-size: 1.6rem;
+}
+a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    outline: none;
+}
+a:link{
+    color: var(--primary-color);
+}
+a:visited{
+    color: var(--seondary-color);
+}
+a:focus,a:hover{
+    color: var(--primary-focus);
+}
+a:active{
+    color: var(--primary-color-active);
+}
+header{
+    width: 100%;
+    background-color: var(--sf4);
+    height: 80px;
+    position: fixed;
+    top:0;
+    z-index: 1;
+    transition: 300ms ease;
+}
+header > .logo{
+    height: 100%;
+    display: flex;
+    width: 58px;
+    align-items: flex-end;
+    font-size: 5rem;
+    font-family: 'sf_collegiateregular';
+    padding: 1rem;
+    letter-spacing: -3px;
+    color: var(--brand-color);
+    filter: grayscale(0%) opacity(1);
+    transition: 300ms;
+}
+header > a:hover{
+    filter: grayscale(20%) opacity(.9);
+}
+header nav{
+    height: 0px;
+    background-color: var(--sf4);
+    transition: 200ms;
+}
+header label[for="hamberger"]{
+    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 2.4rem;
+    background: url('../images/icons8-menu-24.png') no-repeat;
+    background-size: 24px 24px;
+    padding-right: 24px;
+    cursor: pointer;
+    width: 2.4rem;
+    height: 2.4rem;
+    filter: grayscale(0%) opacity(1);
+    transition: 300ms;
+}
+header label[for="hamberger"]:hover{
+    filter: grayscale(20%) opacity(.5);
+}
+header input[type="checkbox"]{
+    position: absolute;
+    top: -100px;
+}
+header input[type="checkbox"]:checked ~ label[for="hamberger"]{
+    top: 39px;
+    background: url('../images/icons8-delete-24.png') no-repeat;
+}
+header input[type="checkbox"]:checked ~ nav{
+    background-color: var(--sf4);
+    height: 54px;
+    transition: height 200ms;
+}
+header ul{
+    display: none;
+    transition: display 2s ease-in;
+}
+header input[type="checkbox"]:checked ~ nav > ul{
+    height: 100%;
+    display: flex;
+    
+}
+header ul li{
+    flex: 1;
+}
+header ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    height: 100%;
+    transition: 300ms;
+    border-radius: 3px;
+}
+header ul li a:link, header ul li a:visited{
+    color: var(--primary-color);
+}
+header ul li a:focus, header ul li a:hover{
+    background-color: var(--primary-focus);
+    color:var(--on-primary)
+}
+header ul li a:active{
+    background-color: var(--primary-color-active);
+    transition: 1ms;
+}
+main{
+    margin-top: 7.8rem;
+    padding: 1rem;
+    transition: 300ms ease;
+}
+section:nth-of-type(1){
+    margin-top: 0;
+}
+section{
+    background-color: var(--sf1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin:1rem;
+}
+footer{
+    background-color: var(--sf4);
+    margin: 0;
+    padding: 2rem;
+    bottom: 0;
+    text-align: center;
+}
+footer p{
+    margin: 0;
+    opacity: .5;
+}
+footer a{
+    font-size: 1.2rem;
+}
+footer ul{
+    display: flex;
+    justify-content: center;
+}
+/*classes*/
+.box-shadow{
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5),
+                -1px -1px 3px rgba(0,0,0,.5);
+    }
+.box-shadow2{
+    box-shadow: 0px 2px 3px rgba(0,0,0,.5)
+    }
+.special{
+    color: var(--primary-color-active);
+}
+.intro{
+    text-align: center;
+    margin: 0;
+}
+.intro ~ a{
+    display: block;
+    padding: 1rem 1rem 0;
+    margin: 1rem;
+}
+
+section a[href*="github"]{
+    background: url("../images/icons8-github-64.png") no-repeat;
+    background-size: 2.6rem 2.6rem;
+    padding-left: 3rem;
+    background-position: center left;
+}
+
+section a[href*="mailto"]{
+    background: url("../images/icons8-email-64.png") no-repeat;
+    background-size: 2.6rem 2.6rem;
+    padding-left: 3rem;
+    background-position: center left;
+}
+.tech-list{
+    display: flex;
+    flex-flow: wrap;
+}
+.tech-list li{
+    flex: 1 150px;
+    display: flex;
+    background-color: var(--sf2);
+    justify-content: center;
+    margin: .5rem;
+    border-radius: 5px;
+}
+.tech-list li span{
+    width: 100%;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    letter-spacing: 1px;
+}
+.tech-list li:nth-of-type(1) span{
+    background: url("../images/icons8-git-48.png") no-repeat top .5rem center;
+}
+.tech-list li:nth-of-type(2) span{
+    background: url("../images/icons8-html-5-48.png") no-repeat top .5rem center;
+}
+.tech-list li:nth-of-type(3) span{
+    background: url("../images/icons8-css3-48.png") no-repeat top .5rem center;
+}
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 2rem;
+    margin: 1rem;
+}
+.project-list li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--sf2);
+    border-radius: .5rem;
+    height: 300px;
+}
+/*others*/
+img{
+    max-width: 100%;
+    border-radius: 800px;
+    padding: 1rem;
+    filter: blur(5px);
+}
+footer ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    width: 45px;
+    height: 45px;
+    margin: 1rem;
+}
+footer ul li a{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    transition: 300ms ease;
+}
+.fb-logo{
+    background: url("../images/icons8-facebook-48-hover.png") no-repeat center;
+    background-size: 3rem 3rem;
+}
+.fb-logo:hover{
+    background: url("../images/icons8-facebook-48.png") no-repeat center;
+    background-size: 3rem 3rem;
+    background-color: var(--primary-color);
+}
+.github-logo{
+    background: url("../images/icons8-github-48-hover.png") no-repeat center;
+    background-size: 3.5rem 3.5rem;
+}
+.github-logo:hover{
+    background: url("../images/icons8-github-48.png") no-repeat center;
+    background-size: 3.5rem 3.5rem;
+    background-color: var(--primary-color);
+}
+.email-logo{
+    background: url("../images/icons8-new-post-48-hover.png") no-repeat center;
+    background-size: 3rem 3rem;
+}
+.email-logo:hover{
+    background: url("../images/icons8-new-post-48.png") no-repeat center;
+    background-size: 3rem 3rem;
+    background-color: var(--primary-color);
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width:950px), screen and (orientation: landscape){
+    header{
+        width: 8rem;
+        height: 100vh;
+    }
+    header > .logo{
+        height: 5.8rem;
+        width: 100%;
+        align-items: flex-start;
+    }
+    header nav{
+        height: 100vh;
+        width: 0;
+        position: absolute;
+        top: 0;
+        left: 8rem;
+    }
+    header label[for="hamberger"]{
+        position: absolute;
+        top: 10rem;
+        left: 50%;
+        margin-left: -12px;
+    }
+    header input[type="checkbox"]:checked ~ label[for="hamberger"]{
+        top: 100px;
+    }
+    header input[type="checkbox"]:checked ~ nav{
+        width: 24rem;
+        height: 100vh;
+        transition: 200ms;
+    }
+    header input[type="checkbox"]:checked ~ nav > ul{
+        flex-flow: column;
+    }
+    header ul li{
+        flex: none;
+        height: 10rem;
+    }
+    header ul li a{
+        border-radius: 5px;
+    }
+    main{
+        display: flex;
+        flex-flow: wrap;
+        margin-left: 7.8rem;
+        margin-top: 0;
+    }
+    section:nth-of-type(1){
+        flex: 2;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    section:nth-of-type(1) div:nth-of-type(1) {
+        flex: 1;
+    }
+    section:nth-of-type(1) div:nth-of-type(2){
+        flex: 2;
+    }
+    .intro{
+        text-align: left;
+        
+    }
+    section:nth-of-type(1) div a{
+        margin-left: 0;
+        width: 40%;
+    }
+    section:nth-of-type(2){
+        flex: 1;
+    }
+    section:nth-of-type(3){
+        width: 100%;
+    }
+    .tech-list li{
+        flex: 1 300px;
+    }
+    .project-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+        gap: 2rem;
+        margin: 1rem;
+    }
+    .box-shadow2{
+        box-shadow: 3px 0px 3px rgba(0,0,0,.5)
+        }
+}
