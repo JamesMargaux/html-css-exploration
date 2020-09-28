@@ -311,7 +311,6 @@ img{
     max-width: 100%;
     border-radius: 800px;
     padding: 1rem;
-    filter: blur(5px);
 }
 footer ul li{
     display: flex;
